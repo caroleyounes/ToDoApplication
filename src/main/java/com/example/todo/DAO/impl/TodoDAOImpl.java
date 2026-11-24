@@ -94,7 +94,7 @@ public class TodoDAOImpl implements TodoDAO {
 
 	@Override
 	public boolean deleteTodo(int id) throws SQLException {
-		String sql = "delete  todos where  WHERE id = ?";
+		String sql = "delete from  todos where  WHERE id = ?";
 		try (Connection conn = DriverManager.getConnection(jdbcUrl);
 				PreparedStatement ps = conn.prepareStatement(sql)) {
 
