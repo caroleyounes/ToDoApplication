@@ -1,0 +1,11 @@
+FROM eclipse-temurin:21-jre-alpine
+WORKDIR /app
+
+# Create directory for persistent SQLite database files
+RUN mkdir -p /app/data
+
+# Copy your packaged Spring Boot JAR (adjust filename if different)
+COPY target/*.jar app.jar
+
+EXPOSE 8080
+ENTRYPOINT ["java", "-jar", "/app/app.jar"]
